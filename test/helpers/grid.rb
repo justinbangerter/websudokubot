@@ -10,7 +10,7 @@ class Grid
   def init_cells()
     @cells = (0..8).map do |col|
       (0..8).map do |row|
-        wrap_cell(col,row).init
+        wrap_cell(col,row).read
       end
     end
     self

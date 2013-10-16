@@ -9,11 +9,6 @@ class Cell
     @read_only = read_only
   end
 
-  def init
-    read
-    self
-  end
-
   def val(val=nil)
     if val.nil?
       @val
@@ -28,9 +23,10 @@ class Cell
     if v.nil? or v == ''
       @val = *(1..9)
     else
-      @val = [v.to_i]
       @read_only = true
+      @val = [v.to_i]
     end
+    self
   end
 
   def write
@@ -50,10 +46,6 @@ class Cell
     #which segment contains this cell
     #top-left to bottom-right 0-8
     (@row/3).floor() * 3 + (@col/3).floor()
-  end
-
-  def empty?
-    @val.size > 0
   end
 
   def known?
