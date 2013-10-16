@@ -1,0 +1,35 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
+    coderay (1.0.9)
+    ffi (1.8.1)
+    method_source (0.8.1)
+    multi_json (1.7.5)
+    pry (0.9.12.2)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-nav (0.2.3)
+      pry (~> 0.9.10)
+    rubyzip (0.9.9)
+    selenium-webdriver (2.33.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
+    slop (3.4.5)
+    test-unit (2.5.5)
+    watir-webdriver (0.6.4)
+      selenium-webdriver (>= 2.18.0)
+    websocket (1.0.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  pry
+  pry-nav
+  test-unit
+  watir-webdriver
