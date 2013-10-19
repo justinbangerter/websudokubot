@@ -55,20 +55,19 @@ class Grid
   def filter_possibilities
     #clear possibility arrays of known values
     known_cells.each do |cell|
-      v = cell.val[0].to_i
       valid = true
-      valid &= col(cell.col).filter_possibilities(v).valid?
-      valid &= row(cell.row).filter_possibilities(v).valid?
-      valid &= seg(cell.seg).filter_possibilities(v).valid?
+      [col(cell.col), row(cell.row), seg(cell.seg)].each do |x|
+        valid &= x.filter_possibilities(cell.val[0].to_i).valid?
+      end
       return false if !valid
     end
   end
 
   def valid?
     (0..8).each do |x|
-      return false if !col(x).valid?
-      return false if !row(x).valid?
-      return false if !seg(x).valid?
+      [col(x), row(x), seg(x)].each do |y|
+        return false if !y.valid?
+      end
     end
     return true
   end
